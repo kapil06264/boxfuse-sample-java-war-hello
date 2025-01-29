@@ -3,3 +3,35 @@
 *.iml
 target
 /.idea/
+
+
+data/os/RedHat 
+5.yml removed
+hiera.yaml
+- "os/%{facts.os.family}/%{facts.os.release.major}.yaml"  removed
+spec/classes/cron.spec
+Redhat7,centos7,scientific7,Old Redhat6 config - removed
+spec/defines/job_spec
+some config removed
+types/environment.pp, sensitive one added
+type Cron::Environment = Array[Variant[Pattern[/(?i:\A[a-z_][a-z0-9_]*=[^\0]*\z)/],Sensitive[Pattern[/(?i:\A[a-z_][a-z0-9_]*=[^\0]*\z)/]]]] 
+.msync.yml version updated
+modulesync_config_version: '9.1.0'
+modulesync_config_version: '9.3.0'
+
+.pmtignore
+/Puppetfile -added
+
+CHANGELOG.md - updated with v5.0.0
+
+Gemfile
+puppetversion = ENV['PUPPET_GEM_VERSION'] || '~> 7.24'
+puppetversion = ENV['PUPPET_GEM_VERSION'] || [">= 7.24", "< 9"]
+
+REFERENCE.md - updated
+metadata.json
+Redhat- 7 removed and 9 added
+Centos- 7 removed and 9 added
+AlmaLinux -9 added
+Rocky - 9 added
+Scientific - completely removed
